@@ -1,0 +1,14 @@
+@(objectives: Seq[model.Objective])
+
+<html>
+    <head>
+        <title>Objectives</title>
+    </head>
+    <body>
+        @for(objective <- objectives) {
+            <div>
+                <p>@objective.description</p>
+            </div>
+        }
+    </body>
+</html>
