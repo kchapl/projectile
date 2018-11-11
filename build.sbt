@@ -1,5 +1,4 @@
-name := """projectile"""
-organization := "projectile"
+name := "projectile"
 
 version := "1.0-SNAPSHOT"
 
@@ -7,11 +6,19 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.12.7"
 
-libraryDependencies += guice
-libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test
+addCompilerPlugin(scalafixSemanticdb)
 
-// Adds additional packages into Twirl
-//TwirlKeys.templateImports += "projectile.controllers._"
+scalacOptions ++= List(
+  "-Yrangepos",
+  "-Ywarn-unused-import"
+)
 
-// Adds additional packages into conf/routes
-// play.sbt.routes.RoutesKeys.routesImport += "projectile.binders._"
+libraryDependencies ++= Seq(
+  guice,
+  "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test
+)
+
+wartremoverErrors ++= Warts.unsafe
+wartremoverExcluded ++= routes.in(Compile).value
+
+TwirlKeys.templateImports := Seq()

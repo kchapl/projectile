@@ -9,7 +9,7 @@ import play.api.mvc._
 @Singleton
 class ObjectiveController @Inject()(components: ControllerComponents) extends AbstractController(components) {
 
-  def index() = Action { implicit request: Request[AnyContent] =>
+  def index() = Action { _ =>
     ObjectiveController.objectiveList()
   }
 }
