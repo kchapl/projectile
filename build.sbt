@@ -15,7 +15,7 @@ scalacOptions ++= List(
 
 libraryDependencies ++= Seq(
   guice,
-  "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test
+  "com.google.apis" % "google-api-services-sheets" % "v4-rev551-1.25.0"
 )
 
 wartremoverErrors ++= Warts.unsafe
