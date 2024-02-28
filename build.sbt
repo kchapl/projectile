@@ -15,7 +15,7 @@ scalacOptions ++= List(
 
 libraryDependencies ++= Seq(
   guice,
-  "com.google.apis" % "google-api-services-sheets" % "v4-rev551-1.25.0",
+  "com.google.apis" % "google-api-services-sheets" % "v4-rev20230815-2.0.0",
   "org.scalatest" %% "scalatest" % "3.0.5" % Test
 )
 
