@@ -4,7 +4,7 @@ version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-scalaVersion := "2.12.7"
+scalaVersion := "2.12.19"
 
 addCompilerPlugin(scalafixSemanticdb)
 
@@ -15,8 +15,8 @@ scalacOptions ++= List(
 
 libraryDependencies ++= Seq(
   guice,
-  "com.google.apis" % "google-api-services-sheets" % "v4-rev551-1.25.0",
-  "org.scalatest" %% "scalatest" % "3.0.5" % Test
+  "com.google.apis" % "google-api-services-sheets" % "v4-rev20230815-2.0.0",
+  "org.scalatest" %% "scalatest" % "3.0.9" % Test
 )
 
 wartremoverErrors ++= Warts.unsafe
